@@ -10,9 +10,11 @@ async function bootstrap() {
 
   app.enableCors();  // Enable Cross-Origin Resource Sharing (CORS)
 
-  // Start the server and listen on port 3000
-  await app.listen(3000);
-  console.log('Backend running on http://localhost:3000');
+  const port = process.env.PORT || 3000;
+
+  // Start the server and listen on the dynamic port
+  await app.listen(port);
+  console.log(`Backend running on http://localhost:${port}`);
 }
 
 // Initialize the application
